@@ -1,16 +1,54 @@
-# React + Vite
+# dyloc
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**An admin dashboard template built entirely with [oks-ui](https://www.oks-ui.com).**
 
-Currently, two official plugins are available:
+Every button, input, chart, menu and table cell in dyloc is an oks-ui primitive
+or composed from oks-ui primitives — no second component library, no separate
+charting library, no form library. It exists to show that one CSS-variable
+component library can carry a full product surface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<!-- Live demo · Repository links are added when the project is published to OKS-PROJECTS. -->
 
-## React Compiler
+## Screenshots
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+_Hero and gallery screenshots live under `.github/media/` once captured._
 
-## Expanding the Oxlint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+| | |
+| --- | --- |
+| Framework | Vite + React 19 |
+| Routing | react-router-dom v7 |
+| UI | **oks-ui** (all of it) |
+| Icons | lucide-react |
+| Styling | Tailwind v4 utilities for layout only; every colour/radius/shadow is a CSS variable |
+| Motion | framer-motion (route transitions and signature motion only) |
+| Lint | oxlint (`react` + `react-hooks` plugins) |
+| Data | deterministic mock data in `src/data/` — no backend |
+
+## Scripts
+
+```bash
+npm run dev      # start the dev server
+npm run build    # production build
+npm run preview  # preview the production build
+npm run lint     # oxlint — must be clean
+```
+
+## How the `ui/` layer works
+
+oks-ui ships the primitives; a small composition layer in
+`src/Components/ui/` builds the handful of things it doesn't
+(`Surface`, `DataTable`, `KpiCard`, `ChartCard`, `DonutCard`, `PageHeader`,
+`MeterList`, the status/trend chips). Every composed component reads **only**
+the `--app-*` semantic tokens defined in `src/styles/theme.css`, so light mode,
+dark mode and a full rebrand all flip from that one file.
+
+Screens that are a list, a form, a settings panel or a detail view are **config
+objects**, not bespoke components — see `src/data/{lists,forms,settings,details}.jsx`
+and the matching `*Routes.jsx` manifests wired into `src/App.jsx`.
+
+## License
+
+[MIT](./LICENSE) · see [`CHANGELOG.md`](./CHANGELOG.md) for the release history
+and the compatible oks-ui range.
