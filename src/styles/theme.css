@@ -1,0 +1,320 @@
+/* ==========================================================================
+   dyloc — design-token layer
+   Ported reference values on top; a semantic --app-* layer underneath so
+   light / dark / rebrand all flip together. Composed ui/ components read
+   ONLY --app-* tokens.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* --- brand ramp (teal) --------------------------------------------------- */
+  --oks-palette-brand-50: #ecfbf7;
+  --oks-palette-brand-100: #d1f5ec;
+  --oks-palette-brand-200: #a8ecdb;
+  --oks-palette-brand-300: #71ddc5;
+  --oks-palette-brand-400: #46d0b6;
+  --oks-palette-brand-500: #38cab3;
+  --oks-palette-brand-600: #23a892;
+  --oks-palette-brand-700: #1c8676;
+  --oks-palette-brand-800: #1a6a5e;
+  --oks-palette-brand-900: #17564e;
+  --oks-palette-brand-950: #08322d;
+
+  /* repoint primary — all 11 stops */
+  --oks-color-primary-50: var(--oks-palette-brand-50);
+  --oks-color-primary-100: var(--oks-palette-brand-100);
+  --oks-color-primary-200: var(--oks-palette-brand-200);
+  --oks-color-primary-300: var(--oks-palette-brand-300);
+  --oks-color-primary-400: var(--oks-palette-brand-400);
+  --oks-color-primary-500: var(--oks-palette-brand-500);
+  --oks-color-primary-600: var(--oks-palette-brand-600);
+  --oks-color-primary-700: var(--oks-palette-brand-700);
+  --oks-color-primary-800: var(--oks-palette-brand-800);
+  --oks-color-primary-900: var(--oks-palette-brand-900);
+  --oks-color-primary-950: var(--oks-palette-brand-950);
+
+  /* --- semantic roles ---------------------------------------------------- */
+  --oks-color-success-50: #eafaf1;
+  --oks-color-success-100: #cdf2de;
+  --oks-color-success-200: #9ee6bf;
+  --oks-color-success-300: #63d69b;
+  --oks-color-success-400: #34c479;
+  --oks-color-success-500: #17b45f;
+  --oks-color-success-600: #0f924c;
+  --oks-color-success-700: #0d7440;
+  --oks-color-success-800: #0d5c34;
+  --oks-color-success-900: #0b4b2c;
+  --oks-color-success-950: #052a19;
+
+  --oks-color-warning-50: #fef6e7;
+  --oks-color-warning-100: #fce8c1;
+  --oks-color-warning-200: #f9d68a;
+  --oks-color-warning-300: #f6c24f;
+  --oks-color-warning-400: #f4b02a;
+  --oks-color-warning-500: #e79a12;
+  --oks-color-warning-600: #c67d0d;
+  --oks-color-warning-700: #9e5f10;
+  --oks-color-warning-800: #814d14;
+  --oks-color-warning-900: #6d4015;
+  --oks-color-warning-950: #3f2207;
+
+  --oks-color-danger-50: #fdecec;
+  --oks-color-danger-100: #fbd0d0;
+  --oks-color-danger-200: #f7a8a8;
+  --oks-color-danger-300: #f17878;
+  --oks-color-danger-400: #ea5151;
+  --oks-color-danger-500: #e0322f;
+  --oks-color-danger-600: #c22120;
+  --oks-color-danger-700: #a01a1b;
+  --oks-color-danger-800: #841a1b;
+  --oks-color-danger-900: #6e1b1c;
+  --oks-color-danger-950: #3c0a0b;
+
+  --oks-color-info-50: #e7f4fe;
+  --oks-color-info-100: #c6e4fc;
+  --oks-color-info-200: #93ccf9;
+  --oks-color-info-300: #58aff4;
+  --oks-color-info-400: #2f93ea;
+  --oks-color-info-500: #1a76d8;
+  --oks-color-info-600: #145cb6;
+  --oks-color-info-700: #144a93;
+  --oks-color-info-800: #163f79;
+  --oks-color-info-900: #163664;
+  --oks-color-info-950: #0f2242;
+
+  --oks-color-secondary-50: #fdedef;
+  --oks-color-secondary-100: #fbd3d9;
+  --oks-color-secondary-200: #f6aab5;
+  --oks-color-secondary-300: #f07d8e;
+  --oks-color-secondary-400: #e8546c;
+  --oks-color-secondary-500: #d93a55;
+  --oks-color-secondary-600: #bb2a46;
+  --oks-color-secondary-700: #9a223b;
+  --oks-color-secondary-800: #802034;
+  --oks-color-secondary-900: #6c1f30;
+  --oks-color-secondary-950: #3d0c17;
+
+  /* --- radius ---------------------------------------------------------- */
+  --oks-radius-sm: 4px;
+  --oks-radius-md: 5px;
+  --oks-radius-lg: 6px;
+  --oks-radius-xl: 8px;
+  --oks-radius-2xl: 12px;
+
+  /* --- the --app-* layer (light) ------------------------------------------- */
+  --app-bg: #f2f4f8;
+  --app-surface: #ffffff;
+  --app-surface-2: #f7f8fb;
+  --app-border: #ededf5;
+  --app-border-strong: #dfe0eb;
+  --app-fg-strong: #14112d;
+  --app-fg: #4a4a69;
+  --app-fg-muted: #7b8191;
+  --app-fg-subtle: #a5a8bd;
+
+  --app-card-radius: 6px;
+  --app-card-border: 1px solid transparent;
+  --app-card-shadow: 1px 1px 7px 0 rgba(154, 154, 204, 0.14);
+
+  --app-menu-bg: #ffffff;
+  --app-menu-fg: #4a4a69;
+  --app-menu-fg-muted: #9b9bad;
+  --app-menu-active-bg: rgba(56, 202, 179, 0.12);
+  --app-menu-active-fg: #23a892;
+  --app-menu-border: #ededf5;
+  --app-menu-heading: #a5a8bd;
+
+  --app-header-bg: #ffffff;
+  --app-header-height: 64px;
+  --app-header-shadow: 0 7px 26px 0 rgba(154, 154, 204, 0.12);
+
+  /* accent roles + soft tints */
+  --app-accent: #23a892;
+  --app-accent-soft: rgba(56, 202, 179, 0.14);
+  --app-ok: #0f924c;
+  --app-ok-soft: rgba(23, 180, 95, 0.14);
+  --app-warn: #c67d0d;
+  --app-warn-soft: rgba(231, 154, 18, 0.16);
+  --app-bad: #c22120;
+  --app-bad-soft: rgba(224, 50, 47, 0.14);
+  --app-neutral-soft: rgba(20, 17, 45, 0.06);
+
+  /* semantic aliases — reference other --app-* tokens so they cascade to dark */
+  --app-primary: var(--app-accent);
+  --app-primary-soft: var(--app-accent-soft);
+  --app-success: var(--app-ok);
+  --app-success-soft: var(--app-ok-soft);
+  --app-warning: var(--app-warn);
+  --app-warning-soft: var(--app-warn-soft);
+  --app-danger: var(--app-bad);
+  --app-danger-soft: var(--app-bad-soft);
+
+  /* oks-ui leaves these light-only — set them so dark can redefine */
+  --oks-color-surface: #ffffff;
+  --oks-color-border: var(--app-border);
+  --oks-form-field-bg: #ffffff;
+  --oks-form-field-fg: #14112d;
+  --oks-form-field-border: #e2e2ef;
+  --oks-form-field-placeholder: #a5a8bd;
+  --oks-form-field-label: #4a4a69;
+  --oks-form-field-muted: #9b9bad;
+}
+
+/* --- dark mode ---------------------------------------------------------- */
+:root[data-theme='dark'] {
+  --app-bg: #12141d;
+  --app-surface: #1b1e2b;
+  --app-surface-2: #232739;
+  --app-border: #2c3042;
+  --app-border-strong: #3b4059;
+  --app-fg-strong: #e7e9f2;
+  --app-fg: #b3b8cc;
+  --app-fg-muted: #8b90a6;
+  --app-fg-subtle: #6a6f88;
+
+  --app-card-border: 1px solid var(--app-border);
+  --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+
+  --app-menu-bg: #1b1e2b;
+  --app-menu-fg: #b3b8cc;
+  --app-menu-fg-muted: #8b90a6;
+  --app-menu-active-bg: rgba(56, 202, 179, 0.18);
+  --app-menu-active-fg: #46d0b6;
+  --app-menu-border: #2c3042;
+  --app-menu-heading: #6a6f88;
+
+  --app-header-bg: #1b1e2b;
+  --app-header-shadow: 0 7px 26px 0 rgba(0, 0, 0, 0.35);
+
+  --app-accent: #46d0b6;
+  --app-accent-soft: rgba(56, 202, 179, 0.18);
+  --app-ok: #34c479;
+  --app-ok-soft: rgba(23, 180, 95, 0.2);
+  --app-warn: #f4b02a;
+  --app-warn-soft: rgba(231, 154, 18, 0.2);
+  --app-bad: #ea5151;
+  --app-bad-soft: rgba(224, 50, 47, 0.2);
+  --app-neutral-soft: rgba(255, 255, 255, 0.06);
+
+  --oks-color-surface: #1b1e2b;
+  --oks-color-border: #2c3042;
+  --oks-form-field-bg: #232739;
+  --oks-form-field-fg: #e7e9f2;
+  --oks-form-field-border: #3b4059;
+  --oks-form-field-placeholder: #6a6f88;
+  --oks-form-field-label: #b3b8cc;
+  --oks-form-field-muted: #8b90a6;
+}
+
+/* ==========================================================================
+   global oks-ui patches (each is also an OKS-UI-FEEDBACK.md entry)
+   ========================================================================== */
+
+/* <Chart> renders its own bordered/padded <figure> — every chart sits in a Surface already */
+.oksChart {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* donut centre total has no opt-out on some paths — hide, overlay our own */
+.donut-no-center svg > g > text[text-anchor='middle'][dominant-baseline='middle'] {
+  display: none;
+}
+
+/* bordered / ghost + default colour: mid-grey fails contrast on dark */
+.oksButton[data-variant='bordered'][data-color='default'],
+.oksButton[data-variant='ghost'][data-color='default'] {
+  --oks-button-tone: var(--app-fg-muted);
+  color: var(--app-fg) !important;
+}
+.oksButton[data-variant='bordered'][data-color='default'] {
+  border-color: var(--app-border-strong) !important;
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-fg);
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* thin, themed scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--app-border-strong) transparent;
+}
+
+/* ==========================================================================
+   composed ui/ layer — shared primitives (read only --app-* tokens)
+   ========================================================================== */
+.dyloc-card {
+  background: var(--app-surface);
+  border: var(--app-card-border);
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+}
+.dyloc-divider {
+  border-color: var(--app-border);
+}
+.dyloc-scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* re-skin oks-ui Tabs variant="solid" track for our segmented control (dark-safe) */
+.dyloc-segmented .oksTabs-tabList,
+.dyloc-segmented [role='tablist'] {
+  background: var(--app-surface-2) !important;
+  border: 1px solid var(--app-border) !important;
+}
+
+/* sidebar nav rows */
+.dyloc-nav-row:hover {
+  background: var(--app-menu-active-bg);
+  color: var(--app-menu-active-fg);
+}
+.dyloc-flyout-anchor > .dyloc-flyout {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 8px;
+  min-width: 190px;
+  padding: 10px;
+  border-radius: var(--app-card-radius);
+  background: var(--app-menu-bg);
+  border: 1px solid var(--app-menu-border);
+  box-shadow: var(--app-header-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-4px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  z-index: 40;
+}
+.dyloc-flyout-anchor:hover > .dyloc-flyout {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* oks Table — align chrome with reference density + tokens */
+.dyloc-table table {
+  font-size: 12.5px;
+}
+.dyloc-table thead th {
+  background: var(--app-surface-2);
+  color: var(--app-fg-muted);
+  font-weight: 600;
+  text-transform: none;
+  white-space: nowrap;
+}
+.dyloc-table tbody td {
+  color: var(--app-fg);
+  border-color: var(--app-border);
+}
+.dyloc-table tbody tr:hover td {
+  background: var(--app-neutral-soft);
+}
