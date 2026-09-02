@@ -14,12 +14,12 @@ export function ChartCard({ title, subtitle, actions, height = 300, children, ..
             unstyled
             height={height}
             legend
-            grid={isBarish ? { horizontal: true } : false}
+            grid={isBarish ? { show: true, horizontal: true, vertical: false } : { show: false }}
             axisY={isBarish ? undefined : { hide: true }}
             line={
               isBarish
                 ? undefined
-                : { curve: 'smooth', point: { show: false }, area: { fill: { opacity: 0.14 } } }
+                : { curve: 'smooth', markers: { size: 0 }, area: { show: true, fill: { opacity: 0.14 } } }
             }
             {...chartProps}
           />
