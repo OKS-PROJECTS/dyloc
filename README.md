@@ -9,9 +9,13 @@ component library can carry a full product surface.
 
 **[Live demo](https://oks-projects.github.io/dyloc/)** · **[Repository](https://github.com/OKS-PROJECTS/dyloc)**
 
+![The default dashboard](.github/media/dashboard.png)
+
 ## Screenshots
 
-_Hero and gallery screenshots live under `.github/media/` once captured._
+| Component gallery | Orders (list archetype) |
+| --- | --- |
+| [![Component gallery](.github/media/gallery.png)](.github/media/gallery.png) | [![Orders list](.github/media/orders.png)](.github/media/orders.png) |
 
 ## Stack
 
