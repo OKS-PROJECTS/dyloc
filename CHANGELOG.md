@@ -8,6 +8,28 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.0.0] — 2026-09-02
+
+### Added
+
+- Every `NAV_ROUTES` entry is now a real, working page — dashboards, the
+  archetype-driven list / form / settings / detail screens, the full component
+  gallery, every deep app page (chat, mail, calendar, file manager, notes,
+  board, contacts, gallery, tree view, notifications), the e-commerce flow,
+  the content pages, auth, and the standalone error pages.
+- First public release under OKS-PROJECTS with a GitHub Pages live demo.
+
+### Fixed
+
+- `ChartCard` `className` now lands on the card (dashboard grid `col-span`).
+- Chat `Message` avatars render as nodes; message column no longer overflows.
+- `SteppedForm` checkout / wizard render their fields (moved to `step.content`).
+- Switch / checkbox rows no longer collapse their label to one word per line
+  (new `ToggleRow`).
+- Charts: no hidden-axis left gutter, no stray category label under donuts,
+  multi-series area renders as clean overlaid lines.
+- `DonutCard` stacks the chart over the legend.
+
 ## [0.1.0] — 2026-09-02
 
 ### Added

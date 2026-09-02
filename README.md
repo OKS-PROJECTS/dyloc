@@ -7,7 +7,7 @@ or composed from oks-ui primitives — no second component library, no separate
 charting library, no form library. It exists to show that one CSS-variable
 component library can carry a full product surface.
 
-<!-- Live demo · Repository links are added when the project is published to OKS-PROJECTS. -->
+**[Live demo](https://oks-projects.github.io/dyloc/)** · **[Repository](https://github.com/OKS-PROJECTS/dyloc)**
 
 ## Screenshots
 
