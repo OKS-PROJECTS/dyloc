@@ -1,12 +1,16 @@
 import { Chart } from 'oks-ui'
 import { cx } from '../../lib/cx.js'
 
-/** Donut + custom centre value + side legend. Composed over <Chart type="donut">. */
+/** Donut + custom centre value + legend, stacked vertically (chart on top,
+ *  legend below). Composed over <Chart type="donut">. */
 export function DonutCard({ data, centerValue, centerLabel, roles, height = 200, className }) {
   const total = data.reduce((a, d) => a + d.value, 0)
+  const colorFor = (d, i) =>
+    d.color ?? `var(--oks-color-${(roles ?? ['primary'])[i % (roles?.length ?? 1)]}-500)`
+
   return (
-    <div className={cx('flex flex-col items-center gap-4 sm:flex-row', className)}>
-      <div className="donut-no-center relative shrink-0" style={{ width: height, height }}>
+    <div className={cx('flex flex-col items-center gap-4', className)}>
+      <div className="donut-no-center relative" style={{ width: height, height }}>
         <Chart
           unstyled
           type="donut"
@@ -32,17 +36,13 @@ export function DonutCard({ data, centerValue, centerLabel, roles, height = 200,
           )}
         </div>
       </div>
-      <ul className="flex-1 space-y-2 self-stretch">
+
+      <ul className="flex w-full flex-wrap justify-center gap-x-5 gap-y-2">
         {data.map((d, i) => (
-          <li key={d.label} className="flex items-center justify-between gap-3 text-[12px]">
-            <span className="flex items-center gap-2" style={{ color: 'var(--app-fg)' }}>
-              <span
-                className="h-2.5 w-2.5 rounded-sm"
-                style={{ background: d.color ?? `var(--oks-color-${(roles ?? ['primary'])[i % (roles?.length ?? 1)]}-500)` }}
-              />
-              {d.label}
-            </span>
-            <span style={{ color: 'var(--app-fg-muted)' }}>
+          <li key={d.label} className="flex items-center gap-2 text-[12px]">
+            <span className="h-2.5 w-2.5 shrink-0 rounded-sm" style={{ background: colorFor(d, i) }} />
+            <span style={{ color: 'var(--app-fg)' }}>{d.label}</span>
+            <span className="tabular-nums font-medium" style={{ color: 'var(--app-fg-muted)' }}>
               {total ? Math.round((d.value / total) * 100) : 0}%
             </span>
           </li>
