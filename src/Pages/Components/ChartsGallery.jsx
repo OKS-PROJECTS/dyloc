@@ -55,11 +55,38 @@ export default function ChartsGallery({ kind }) {
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
           <Surface>
             <CardHeader title="Pie" />
-            <div className="px-4 pb-4"><Chart unstyled type="pie" height={280} data={pie} x="label" series={[{ key: 'value', name: 'Share' }]} legend /></div>
+            <div className="px-4 pb-4">
+              <Chart
+                unstyled
+                type="pie"
+                height={280}
+                data={pie}
+                x="label"
+                series={[{ key: 'value', name: 'Share' }]}
+                legend={{ show: true }}
+                palette={{ roles: ['primary', 'info', 'warning', 'success'] }}
+                axisX={{ hide: true }}
+                axisY={{ hide: true }}
+              />
+            </div>
           </Surface>
           <Surface>
             <CardHeader title="Donut" />
-            <div className="donut-no-center px-4 pb-4"><Chart unstyled type="donut" height={280} data={pie} x="label" series={[{ key: 'value', name: 'Share' }]} legend pie={{ center: false }} /></div>
+            <div className="donut-no-center px-4 pb-4">
+              <Chart
+                unstyled
+                type="donut"
+                height={280}
+                data={pie}
+                x="label"
+                series={[{ key: 'value', name: 'Share' }]}
+                legend={{ show: true }}
+                palette={{ roles: ['primary', 'info', 'warning', 'success'] }}
+                axisX={{ hide: true }}
+                axisY={{ hide: true }}
+                pie={{ center: false }}
+              />
+            </div>
           </Surface>
         </div>
       )}

@@ -15,6 +15,9 @@ export function DonutCard({ data, centerValue, centerLabel, roles, height = 200,
           x="name"
           series={[{ key: 'value', name: 'Value' }]}
           legend={false}
+          tooltip={{ show: false }}
+          axisX={{ hide: true }}
+          axisY={{ hide: true }}
           palette={roles ? { roles } : undefined}
           pie={{ center: false }}
         />

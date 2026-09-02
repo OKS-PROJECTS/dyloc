@@ -75,15 +75,15 @@ export default function AnalyticsDashboard() {
           ]}
           height={300}
         />
-        <Surface>
+        <Surface className="flex flex-col">
           <CardHeader title="Device split" subtitle="Share of sessions" />
-          <div className="px-5 pb-6 pt-2">
+          <div className="flex flex-1 items-center px-5 pb-6 pt-2">
             <DonutCard
               data={devices}
               centerValue="126K"
               centerLabel="sessions"
               roles={['primary', 'info', 'warning']}
-              height={180}
+              height={200}
             />
           </div>
         </Surface>

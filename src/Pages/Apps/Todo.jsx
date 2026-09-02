@@ -37,8 +37,10 @@ export default function Todo() {
 
       <Surface className="p-4">
         <CardHeader title="Board" subtitle="Drag cards between columns, or use the keyboard" className="px-1 pt-1" />
-        <div className="mt-2 h-[460px]">
+        <div className="mt-2 h-[440px]">
           <Board
+            isCompact
+            columnWidth={280}
             columns={[
               { id: 'todo', title: 'To do' },
               { id: 'doing', title: 'In progress' },
@@ -51,12 +53,24 @@ export default function Todo() {
               setItems((prev) => prev.map((it) => (it.id === itemId ? { ...it, col: to.columnId } : it)))
             }
             renderCard={(i) => (
-              <div className="space-y-2">
-                <div className="flex items-start gap-2">
+              <div className="flex items-start gap-2.5">
+                <span className="mt-0.5 shrink-0">
                   <Checkbox defaultChecked={i.col === 'done'} aria-label={i.title} />
-                  <span className="text-[12.5px]" style={{ color: 'var(--app-fg)' }}>{i.title}</span>
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p
+                    className="text-[12.5px] leading-snug"
+                    style={{
+                      color: i.col === 'done' ? 'var(--app-fg-subtle)' : 'var(--app-fg)',
+                      textDecoration: i.col === 'done' ? 'line-through' : 'none',
+                    }}
+                  >
+                    {i.title}
+                  </p>
+                  <Chip size="sm" variant="soft" color={PRIORITY[i.priority]} className="mt-1.5">
+                    {i.priority}
+                  </Chip>
                 </div>
-                <Chip size="sm" variant="soft" color={PRIORITY[i.priority]}>{i.priority}</Chip>
               </div>
             )}
           />
