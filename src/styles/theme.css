@@ -98,12 +98,12 @@
   /* --- radius ---------------------------------------------------------- */
   --oks-radius-sm: 4px;
   --oks-radius-md: 5px;
-  --oks-radius-lg: 6px;
-  --oks-radius-xl: 8px;
+  --oks-radius-lg: 5px;
+  --oks-radius-xl: 7px;
   --oks-radius-2xl: 12px;
 
   /* --- the --app-* layer (light) ------------------------------------------- */
-  --app-bg: #f2f4f8;
+  --app-bg: #f3f5f4;
   --app-surface: #ffffff;
   --app-surface-2: #f7f8fb;
   --app-border: #ededf5;
@@ -113,9 +113,9 @@
   --app-fg-muted: #7b8191;
   --app-fg-subtle: #a5a8bd;
 
-  --app-card-radius: 6px;
+  --app-card-radius: 5px;
   --app-card-border: 1px solid transparent;
-  --app-card-shadow: 1px 1px 7px 0 rgba(154, 154, 204, 0.14);
+  --app-card-shadow: 1px 1px 7px 0 rgba(154, 154, 204, 0.12);
 
   --app-menu-bg: #ffffff;
   --app-menu-fg: #4a4a69;
