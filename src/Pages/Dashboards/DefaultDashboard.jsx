@@ -139,11 +139,13 @@ export default function DefaultDashboard() {
           <CardHeader title="Main tasks" subtitle="Assigned to you" />
           <ul className="space-y-1 px-4 pb-4">
             {mainTasks.map((t) => (
-              <li key={t.text} className="flex items-start gap-2.5 py-1.5">
-                <Checkbox defaultChecked={t.done} aria-label={t.text} />
-                <div className="min-w-0">
+              <li key={t.text} className="flex items-start gap-3 py-2">
+                <span className="mt-0.5 shrink-0">
+                  <Checkbox defaultChecked={t.done} aria-label={t.text} />
+                </span>
+                <div className="min-w-0 flex-1">
                   <p
-                    className="text-[12.5px]"
+                    className="text-[12.5px] leading-snug"
                     style={{
                       color: t.done ? 'var(--app-fg-subtle)' : 'var(--app-fg)',
                       textDecoration: t.done ? 'line-through' : 'none',
@@ -151,7 +153,7 @@ export default function DefaultDashboard() {
                   >
                     {t.text}
                   </p>
-                  <p className="text-[11px]" style={{ color: 'var(--app-fg-muted)' }}>
+                  <p className="mt-0.5 text-[11px]" style={{ color: 'var(--app-fg-muted)' }}>
                     {t.when}
                   </p>
                 </div>

@@ -21,6 +21,7 @@ export default function ChatApp() {
   const [active, setActive] = useState(1)
   const [msgs, setMsgs] = useState(SEED_MSGS)
   const [draft, setDraft] = useState('')
+  const activeThread = THREADS.find((t) => t.id === active) ?? THREADS[0]
 
   const send = () => {
     if (!draft.trim()) return
@@ -31,7 +32,7 @@ export default function ChatApp() {
   return (
     <>
       <PageHeader title="Chat" trail={[{ label: 'Apps', to: '/apps/chat' }, { label: 'Chat' }]} />
-      <Surface className="grid grid-cols-1 overflow-hidden lg:grid-cols-[280px_1fr]" style={{ height: '70vh' }}>
+      <Surface className="grid grid-cols-1 overflow-hidden lg:grid-cols-[280px_minmax(0,1fr)]" style={{ height: '70vh' }}>
         <div className="hidden flex-col border-r lg:flex" style={{ borderColor: 'var(--app-border)' }}>
           <div className="p-3">
             <TextField size="sm" placeholder="Search conversations…" />
@@ -61,16 +62,29 @@ export default function ChatApp() {
 
         <div className="flex min-w-0 flex-col">
           <div className="flex items-center gap-3 border-b px-4 py-3" style={{ borderColor: 'var(--app-border)' }}>
-            <Avatar src={avatarUrl(3)} name="Ops team" size={34} showFallback />
-            <p className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>Ops team</p>
+            <Avatar src={avatarUrl(activeThread.seed)} name={activeThread.name} size={34} showFallback />
+            <p className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{activeThread.name}</p>
           </div>
           <div className="flex-1 overflow-y-auto p-4">
             <MessageList>
-              {msgs.map((m, i) => (
-                <Message key={i} author={m.author} avatar={avatarUrl(m.seed)} timestamp={m.at} align={m.align} status={m.status}>
-                  {m.text}
-                </Message>
-              ))}
+              {msgs.map((m, i) => {
+                const prev = msgs[i - 1]
+                const continuation = prev && prev.author === m.author && prev.align === m.align
+                return (
+                  <Message
+                    key={i}
+                    author={m.author}
+                    avatar={<Avatar src={avatarUrl(m.seed)} name={m.author} size={28} showFallback />}
+                    timestamp={m.at}
+                    align={m.align}
+                    color={m.align === 'end' ? 'primary' : 'default'}
+                    status={m.status}
+                    isContinuation={continuation}
+                  >
+                    {m.text}
+                  </Message>
+                )
+              })}
             </MessageList>
           </div>
           <form

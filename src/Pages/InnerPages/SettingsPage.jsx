@@ -1,5 +1,5 @@
-import { Tabs, Tab, Form, FormFieldSet, Switch, Button, Divider, toast } from 'oks-ui'
-import { PageHeader, Surface } from '../../Components/ui/index.js'
+import { Tabs, Tab, Form, FormFieldSet, Button, Divider, toast } from 'oks-ui'
+import { PageHeader, Surface, ToggleRow } from '../../Components/ui/index.js'
 import { useIsDesktop } from '../../lib/useMediaQuery.js'
 
 /**
@@ -23,10 +23,16 @@ export default function SettingsPage({ config }) {
           isVertical={isDesktop}
           variant={isDesktop ? 'light' : 'underlined'}
           color="primary"
+          classNames={{
+            tabList: isDesktop
+              ? 'min-w-[180px] border-r pr-2 [border-color:var(--app-border)]'
+              : undefined,
+            panel: 'flex-1',
+          }}
         >
           {tabs.map((t) => (
             <Tab key={t.key} title={t.title}>
-              <Form onSubmit={() => toast.success('Settings saved')} className="max-w-2xl space-y-6 p-4">
+              <Form onSubmit={() => toast.success('Settings saved')} className="max-w-2xl space-y-6 p-4 lg:pl-6">
                 {t.groups.map((g, gi) => (
                   <div key={g.title}>
                     {gi > 0 && <Divider className="mb-5" />}
@@ -41,15 +47,13 @@ export default function SettingsPage({ config }) {
                     <div className="mt-3 space-y-4">
                       {g.fields.map((f) =>
                         f.type === 'switch' ? (
-                          <div key={f.name} className="flex items-center justify-between gap-4">
-                            <div>
-                              <p className="text-[12.5px]" style={{ color: 'var(--app-fg)' }}>{f.label}</p>
-                              {f.hint && (
-                                <p className="text-[11.5px]" style={{ color: 'var(--app-fg-muted)' }}>{f.hint}</p>
-                              )}
-                            </div>
-                            <Switch name={f.name} defaultChecked={f.defaultChecked} aria-label={f.label} />
-                          </div>
+                          <ToggleRow
+                            key={f.name}
+                            name={f.name}
+                            label={f.label}
+                            hint={f.hint}
+                            defaultChecked={f.defaultChecked}
+                          />
                         ) : (
                           <FormFieldSet key={f.name} {...f} />
                         ),
