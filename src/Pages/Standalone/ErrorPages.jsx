@@ -5,7 +5,7 @@ import Logo from '../../Components/Commom/Logo.jsx'
 
 function Shell({ code, title, description, action }) {
   return (
-    <div
+    <main
       className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
       style={{ background: 'var(--app-bg)' }}
     >
@@ -26,7 +26,7 @@ function Shell({ code, title, description, action }) {
         {description}
       </p>
       <div className="mt-6">{action}</div>
-    </div>
+    </main>
   )
 }
 

@@ -36,9 +36,9 @@ export default function SettingsPage({ config }) {
                 {t.groups.map((g, gi) => (
                   <div key={g.title}>
                     {gi > 0 && <Divider className="mb-5" />}
-                    <h3 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>
+                    <h2 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>
                       {g.title}
-                    </h3>
+                    </h2>
                     {g.description && (
                       <p className="mt-0.5 mb-3 text-[12px]" style={{ color: 'var(--app-fg-muted)' }}>
                         {g.description}

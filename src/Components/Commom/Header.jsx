@@ -133,13 +133,13 @@ export default function Header({ onOpenMobileNav, onToggleCollapse }) {
         </Badge>
 
         <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Badge content={3} color="warning" size="sm" placement="top-right">
+          <Badge content={3} color="warning" size="sm" placement="top-right">
+            <DropdownTrigger>
               <Button isIconOnly size="sm" variant="ghost" color="default" aria-label="Notifications">
                 <Bell size={17} />
               </Button>
-            </Badge>
-          </DropdownTrigger>
+            </DropdownTrigger>
+          </Badge>
           <DropdownMenu aria-label="Notifications">
             <DropdownSection title="Notifications">
               <DropdownItem key="1" description="30 mins ago">New website is created</DropdownItem>

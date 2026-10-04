@@ -37,7 +37,7 @@ export default function Pricing() {
             style={p.highlight ? { borderColor: 'var(--app-primary)', borderWidth: 1, borderStyle: 'solid' } : undefined}
           >
             <div className="flex items-center justify-between">
-              <h3 className="text-[15px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{p.name}</h3>
+              <h2 className="text-[15px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{p.name}</h2>
               {p.highlight && <Chip size="sm" color="primary">Popular</Chip>}
             </div>
             <p className="mt-1 text-[12px]" style={{ color: 'var(--app-fg-muted)' }}>{p.blurb}</p>

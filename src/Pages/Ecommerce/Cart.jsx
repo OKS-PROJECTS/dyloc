@@ -49,7 +49,7 @@ export default function Cart() {
         </Surface>
 
         <Surface className="h-fit p-5">
-          <h3 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>Summary</h3>
+          <h2 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>Summary</h2>
           <dl className="mt-3 space-y-2 text-[12.5px]">
             <div className="flex justify-between"><dt style={{ color: 'var(--app-fg-muted)' }}>Subtotal</dt><dd style={{ color: 'var(--app-fg)' }}>${subtotal.toFixed(2)}</dd></div>
             <div className="flex justify-between"><dt style={{ color: 'var(--app-fg-muted)' }}>Shipping</dt><dd style={{ color: 'var(--app-fg)' }}>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</dd></div>

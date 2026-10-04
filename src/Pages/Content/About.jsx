@@ -33,7 +33,7 @@ export default function About() {
       <div className="mb-5 grid grid-cols-1 gap-4 md:grid-cols-3">
         {values.map((v) => (
           <Surface key={v.title} className="p-5">
-            <h3 className="text-[13.5px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{v.title}</h3>
+            <h2 className="text-[13.5px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{v.title}</h2>
             <p className="mt-1 text-[12.5px]" style={{ color: 'var(--app-fg-muted)' }}>{v.body}</p>
           </Surface>
         ))}

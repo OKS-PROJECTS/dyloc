@@ -14,6 +14,7 @@ export default function Footer() {
           href="https://www.oks-ui.com"
           target="_blank"
           rel="noreferrer"
+          className="underline underline-offset-2"
           style={{ color: 'var(--app-primary)' }}
         >
           oks-ui

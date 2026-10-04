@@ -6,7 +6,7 @@ export function AuthLayout({ title, subtitle, children, footer }) {
   return (
     <div className="grid min-h-screen lg:grid-cols-2" style={{ background: 'var(--app-bg)' }}>
       {/* brand panel */}
-      <div
+      <aside
         className="relative hidden flex-col justify-between overflow-hidden p-12 lg:flex"
         style={{
           background:
@@ -28,10 +28,10 @@ export function AuthLayout({ title, subtitle, children, footer }) {
           className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full"
           style={{ background: 'rgba(255,255,255,0.08)' }}
         />
-      </div>
+      </aside>
 
       {/* form panel */}
-      <div className="flex items-center justify-center p-6 sm:p-10">
+      <main className="flex items-center justify-center p-6 sm:p-10">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export function AuthLayout({ title, subtitle, children, footer }) {
             </Link>
           </p>
         </motion.div>
-      </div>
+      </main>
     </div>
   )
 }

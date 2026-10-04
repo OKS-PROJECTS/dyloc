@@ -65,7 +65,7 @@ export default function DetailPage({ config }) {
         <div className="space-y-5">
           {aside.map((s) => (
             <Surface key={s.title} className="p-5">
-              <h3 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{s.title}</h3>
+              <h2 className="text-[13px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>{s.title}</h2>
               <Divider className="my-3" />
               <ul className="space-y-2 text-[12.5px]">
                 {s.rows.map((r) => (

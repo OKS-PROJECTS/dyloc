@@ -16,7 +16,7 @@
   --oks-palette-brand-400: #46d0b6;
   --oks-palette-brand-500: #38cab3;
   --oks-palette-brand-600: #23a892;
-  --oks-palette-brand-700: #1c8676;
+  --oks-palette-brand-700: #1a7e6f;
   --oks-palette-brand-800: #1a6a5e;
   --oks-palette-brand-900: #17564e;
   --oks-palette-brand-950: #08322d;
@@ -110,8 +110,8 @@
   --app-border-strong: #dfe0eb;
   --app-fg-strong: #14112d;
   --app-fg: #4a4a69;
-  --app-fg-muted: #7b8191;
-  --app-fg-subtle: #a5a8bd;
+  --app-fg-muted: #5d6370;
+  --app-fg-subtle: #6c6e7c;
 
   --app-card-radius: 5px;
   --app-card-border: 1px solid transparent;
@@ -119,24 +119,24 @@
 
   --app-menu-bg: #ffffff;
   --app-menu-fg: #4a4a69;
-  --app-menu-fg-muted: #9b9bad;
+  --app-menu-fg-muted: #747482;
   --app-menu-active-bg: rgba(56, 202, 179, 0.12);
-  --app-menu-active-fg: #23a892;
+  --app-menu-active-fg: #187566;
   --app-menu-border: #ededf5;
-  --app-menu-heading: #a5a8bd;
+  --app-menu-heading: #727483;
 
   --app-header-bg: #ffffff;
   --app-header-height: 64px;
   --app-header-shadow: 0 7px 26px 0 rgba(154, 154, 204, 0.12);
 
   /* accent roles + soft tints */
-  --app-accent: #23a892;
+  --app-accent: #187566;
   --app-accent-soft: rgba(56, 202, 179, 0.14);
-  --app-ok: #0f924c;
+  --app-ok: #0c753d;
   --app-ok-soft: rgba(23, 180, 95, 0.14);
-  --app-warn: #c67d0d;
+  --app-warn: #905b09;
   --app-warn-soft: rgba(231, 154, 18, 0.16);
-  --app-bad: #c22120;
+  --app-bad: #be201f;
   --app-bad-soft: rgba(224, 50, 47, 0.14);
   --app-neutral-soft: rgba(20, 17, 45, 0.06);
 
@@ -156,13 +156,70 @@
   --oks-form-field-bg: #ffffff;
   --oks-form-field-fg: #14112d;
   --oks-form-field-border: #e2e2ef;
-  --oks-form-field-placeholder: #a5a8bd;
+  --oks-form-field-placeholder: #6c6e7c;
   --oks-form-field-label: #4a4a69;
-  --oks-form-field-muted: #9b9bad;
+  --oks-form-field-muted: #6c6e7c;
 }
 
 /* --- dark mode ---------------------------------------------------------- */
 :root[data-theme='dark'] {
+  /* brand ramp mirrored for dark: fills use the light shades, so labels on them stay dark */
+  --oks-palette-brand-50: #08322d;
+  --oks-palette-brand-100: #17564e;
+  --oks-palette-brand-200: #1a6a5e;
+  --oks-palette-brand-300: #1a7e6f;
+  --oks-palette-brand-400: #23a892;
+  --oks-palette-brand-600: #46d0b6;
+  --oks-palette-brand-700: #71ddc5;
+  --oks-palette-brand-800: #a8ecdb;
+  --oks-palette-brand-900: #d1f5ec;
+  --oks-palette-brand-950: #ecfbf7;
+
+  /* semantic ramps mirrored for dark, same reason as brand */
+  --oks-color-success-50: #052a19;
+  --oks-color-success-100: #0b4b2c;
+  --oks-color-success-200: #0d5c34;
+  --oks-color-success-300: #0d7440;
+  --oks-color-success-400: #0f924c;
+  --oks-color-success-600: #34c479;
+  --oks-color-success-700: #63d69b;
+  --oks-color-success-800: #9ee6bf;
+  --oks-color-success-900: #cdf2de;
+  --oks-color-success-950: #eafaf1;
+
+  --oks-color-warning-50: #3f2207;
+  --oks-color-warning-100: #6d4015;
+  --oks-color-warning-200: #814d14;
+  --oks-color-warning-300: #9e5f10;
+  --oks-color-warning-400: #c67d0d;
+  --oks-color-warning-600: #f4b02a;
+  --oks-color-warning-700: #f6c24f;
+  --oks-color-warning-800: #f9d68a;
+  --oks-color-warning-900: #fce8c1;
+  --oks-color-warning-950: #fef6e7;
+
+  --oks-color-danger-50: #3c0a0b;
+  --oks-color-danger-100: #6e1b1c;
+  --oks-color-danger-200: #841a1b;
+  --oks-color-danger-300: #a01a1b;
+  --oks-color-danger-400: #c22120;
+  --oks-color-danger-600: #ea5151;
+  --oks-color-danger-700: #f17878;
+  --oks-color-danger-800: #f7a8a8;
+  --oks-color-danger-900: #fbd0d0;
+  --oks-color-danger-950: #fdecec;
+
+  --oks-color-info-50: #0f2242;
+  --oks-color-info-100: #163664;
+  --oks-color-info-200: #163f79;
+  --oks-color-info-300: #144a93;
+  --oks-color-info-400: #145cb6;
+  --oks-color-info-600: #2f93ea;
+  --oks-color-info-700: #58aff4;
+  --oks-color-info-800: #93ccf9;
+  --oks-color-info-900: #c6e4fc;
+  --oks-color-info-950: #e7f4fe;
+
   --app-bg: #12141d;
   --app-surface: #1b1e2b;
   --app-surface-2: #232739;
@@ -170,8 +227,8 @@
   --app-border-strong: #3b4059;
   --app-fg-strong: #e7e9f2;
   --app-fg: #b3b8cc;
-  --app-fg-muted: #8b90a6;
-  --app-fg-subtle: #6a6f88;
+  --app-fg-muted: #b0b4c4;
+  --app-fg-subtle: #a0a3b3;
 
   --app-card-border: 1px solid var(--app-border);
   --app-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
@@ -182,7 +239,7 @@
   --app-menu-active-bg: rgba(56, 202, 179, 0.18);
   --app-menu-active-fg: #46d0b6;
   --app-menu-border: #2c3042;
-  --app-menu-heading: #6a6f88;
+  --app-menu-heading: #a0a3b3;
 
   --app-header-bg: #1b1e2b;
   --app-header-shadow: 0 7px 26px 0 rgba(0, 0, 0, 0.35);
@@ -193,7 +250,7 @@
   --app-ok-soft: rgba(23, 180, 95, 0.2);
   --app-warn: #f4b02a;
   --app-warn-soft: rgba(231, 154, 18, 0.2);
-  --app-bad: #ea5151;
+  --app-bad: #ef7878;
   --app-bad-soft: rgba(224, 50, 47, 0.2);
   --app-neutral-soft: rgba(255, 255, 255, 0.06);
 
@@ -202,7 +259,7 @@
   --oks-form-field-bg: #232739;
   --oks-form-field-fg: #e7e9f2;
   --oks-form-field-border: #3b4059;
-  --oks-form-field-placeholder: #6a6f88;
+  --oks-form-field-placeholder: #9096b0;
   --oks-form-field-label: #b3b8cc;
   --oks-form-field-muted: #8b90a6;
 }

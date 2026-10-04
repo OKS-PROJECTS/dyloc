@@ -42,9 +42,9 @@ export default function GalleryIndex() {
                 className="group flex flex-col p-4 transition-shadow hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-[13.5px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>
+                  <h2 className="text-[13.5px] font-semibold" style={{ color: 'var(--app-fg-strong)' }}>
                     {e.title}
-                  </h3>
+                  </h2>
                   <ArrowRight
                     size={15}
                     className="opacity-0 transition-opacity group-hover:opacity-100"

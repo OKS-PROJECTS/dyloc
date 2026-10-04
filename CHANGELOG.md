@@ -4,9 +4,25 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/); this project adheres to
 [Semantic Versioning](https://semver.org/).
 
-> Requires oks-ui ^1.1.2
+> Requires oks-ui ^1.3.2
 
 ## [Unreleased]
+
+## [1.0.1] — 2026-10-04
+
+### Changed
+
+- Updated to oks-ui `^1.3.2`; removed the unused `date-fns` dependency.
+
+### Fixed
+
+- Text contrast meets WCAG AA (4.5:1) in light and dark: muted and subtle text,
+  form placeholders and hints, links and status colours.
+- Dark theme mirrors the brand, success, warning, danger and info ramps, so
+  labels on filled buttons, badges and alerts stay readable.
+- Pages have a `<main>` landmark (auth and error screens) and card titles use
+  `h2`, so heading order no longer skips a level.
+- The notification badge sits beside its dropdown trigger instead of wrapping it.
 
 ## [1.0.0] — 2026-09-02
 

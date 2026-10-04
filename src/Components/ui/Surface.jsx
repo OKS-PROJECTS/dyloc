@@ -22,12 +22,12 @@ export function CardHeader({ title, subtitle, actions, divider = false, classNam
     >
       <div className="min-w-0">
         {title && (
-          <h3
+          <h2
             className="text-[14px] font-semibold leading-tight"
             style={{ color: 'var(--app-fg-strong)' }}
           >
             {title}
-          </h3>
+          </h2>
         )}
         {subtitle && (
           <p className="mt-0.5 text-[12px]" style={{ color: 'var(--app-fg-muted)' }}>
