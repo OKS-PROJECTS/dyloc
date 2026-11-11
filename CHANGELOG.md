@@ -4,9 +4,15 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/); this project adheres to
 [Semantic Versioning](https://semver.org/).
 
-> Requires oks-ui ^1.3.2
+> Requires oks-ui ^1.6.0
 
 ## [Unreleased]
+
+## [1.0.2] — 2026-11-10
+
+### Changed
+
+- Updated to oks-ui `^1.6.0` (from `^1.3.2`).
 
 ## [1.0.1] — 2026-10-04
 
